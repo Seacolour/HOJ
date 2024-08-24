@@ -1,12 +1,12 @@
 package com.hang.hojjudgeservice.judge.codesandbox.impl;
 
-
 import com.hang.hojjudgeservice.judge.codesandbox.CodeSandbox;
 import com.hang.hojmodel.model.codesandbox.ExecuteCodeRequest;
 import com.hang.hojmodel.model.codesandbox.ExecuteCodeResponse;
 
+
 /**
- * 第三方代码沙箱
+ * 第三方代码沙箱（调用网上现成的代码沙箱）
  */
 public class ThirdPartyCodeSandbox implements CodeSandbox {
     @Override

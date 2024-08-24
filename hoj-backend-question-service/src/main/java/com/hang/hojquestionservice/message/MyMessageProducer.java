@@ -1,4 +1,4 @@
-package com.hang.hojquestionservice.rabbitmq;
+package com.hang.hojquestionservice.message;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;

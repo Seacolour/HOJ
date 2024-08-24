@@ -42,10 +42,10 @@ public class QuestionVO implements Serializable {
      */
     private Integer submitNum;
 
-    /**
-     * 题目通过数
-     */
-    private Integer acceptedNum;
+//    /**
+//     * 题目通过数
+//     */
+//    private Integer acceptedNum;
 
     /**
      * 判题配置（json 对象）

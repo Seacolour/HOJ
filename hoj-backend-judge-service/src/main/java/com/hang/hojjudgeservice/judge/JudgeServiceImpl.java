@@ -1,13 +1,8 @@
 package com.hang.hojjudgeservice.judge;
 
 import cn.hutool.json.JSONUtil;
-
 import com.hang.hojcommon.common.ErrorCode;
 import com.hang.hojcommon.exception.BusinessException;
-import com.hang.hojjudgeservice.judge.codesandbox.CodeSandbox;
-import com.hang.hojjudgeservice.judge.codesandbox.CodeSandboxFactory;
-import com.hang.hojjudgeservice.judge.codesandbox.CodeSandboxProxy;
-import com.hang.hojjudgeservice.judge.strategy.JudgeContext;
 import com.hang.hojmodel.model.codesandbox.ExecuteCodeRequest;
 import com.hang.hojmodel.model.codesandbox.ExecuteCodeResponse;
 import com.hang.hojmodel.model.codesandbox.JudgeInfo;
@@ -16,6 +11,12 @@ import com.hang.hojmodel.model.entity.Question;
 import com.hang.hojmodel.model.entity.QuestionSubmit;
 import com.hang.hojmodel.model.enums.QuestionSubmitStatusEnum;
 import com.hang.hojserviceclient.service.QuestionFeignClient;
+
+import com.hang.hojjudgeservice.judge.codesandbox.CodeSandbox;
+import com.hang.hojjudgeservice.judge.codesandbox.CodeSandboxFactory;
+import com.hang.hojjudgeservice.judge.codesandbox.CodeSandboxProxy;
+import com.hang.hojjudgeservice.judge.strategy.JudgeContext;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +27,14 @@ import java.util.stream.Collectors;
 @Service
 public class JudgeServiceImpl implements JudgeService {
 
-    @Value("${codesandbox.type:example}")
-    private String type;
-
     @Resource
     private QuestionFeignClient questionFeignClient;
 
     @Resource
     private JudgeManager judgeManager;
+
+    @Value("${codesandbox.type:example}")
+    private String type;
 
 
     @Override
@@ -76,13 +77,6 @@ public class JudgeServiceImpl implements JudgeService {
                 .build();
         ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
         List<String> outputList = executeCodeResponse.getOutputList();
-        /**
-         * 判断逻辑
-         * 1.先判断沙箱执行的结果输出数量是否和预期输出数量相等
-         * 2.依次判断每一项输出和预期输出是否相等
-         * 3.判断题目的限制是否符合要求
-         * 4.可能还有其他特殊情况
-         */
         // 5）根据沙箱的执行结果，设置题目的判题状态和信息
         JudgeContext judgeContext = new JudgeContext();
         judgeContext.setJudgeInfo(executeCodeResponse.getJudgeInfo());

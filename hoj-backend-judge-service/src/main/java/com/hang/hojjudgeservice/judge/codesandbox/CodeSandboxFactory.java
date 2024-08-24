@@ -1,17 +1,18 @@
 package com.hang.hojjudgeservice.judge.codesandbox;
 
-
 import com.hang.hojjudgeservice.judge.codesandbox.impl.ExampleCodeSandbox;
 import com.hang.hojjudgeservice.judge.codesandbox.impl.RemoteCodeSandbox;
 import com.hang.hojjudgeservice.judge.codesandbox.impl.ThirdPartyCodeSandbox;
 
 /**
- * 代码沙箱工厂（根据字符串创建指定的代码沙箱）
+ * 代码沙箱工厂（根据字符串参数创建指定的代码沙箱实例）
  */
 public class CodeSandboxFactory {
+
     /**
-     * 根据字符串参数创建指定的代码沙箱
-     * @param type
+     * 创建代码沙箱示例
+     *
+     * @param type 沙箱类型
      * @return
      */
     public static CodeSandbox newInstance(String type) {

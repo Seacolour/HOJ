@@ -44,10 +44,10 @@ public class Question implements Serializable {
      */
     private Integer submitNum;
 
-    /**
-     * 题目通过数
-     */
-    private Integer acceptedNum;
+//    /**
+//     * 题目通过数
+//     */
+//    private Integer acceptedNum;
 
     /**
      * 判题用例（json 数组）

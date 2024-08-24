@@ -12,21 +12,21 @@ spring:
   # session 配置
   session:
     store-type: redis
+    # 30 天过期
     timeout: 2592000
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/hoj
     username: root
-    password: "031124"
+    password: 031124
   # Redis 配置
   redis:
     database: 1
-    host: 192.168.23.129
+    host: localhost
     port: 6379
+#    password: 123456
     timeout: 5000
-    password: 123456
-  # 文件上传
   servlet:
     multipart:
       # 大小限制
@@ -35,8 +35,14 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+  rabbitmq:
+    host: localhost
+    port: 5672
+    password: guest
+    username: guest
 server:
   address: 0.0.0.0
+  port: 8104
   servlet:
     context-path: /api/judge
     # cookie 30 天过期
@@ -44,7 +50,6 @@ server:
       cookie:
         max-age: 2592000
         path: /api
-  port: 8104
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: false
@@ -54,10 +59,8 @@ mybatis-plus:
       logic-delete-field: isDelete # 全局逻辑删除的实体字段名
       logic-delete-value: 1 # 逻辑已删除值（默认为 1）
       logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
-#代码沙箱配置
+# 代码沙箱配置
 codesandbox:
   type: remote
 knife4j:
   enable: true
-
-

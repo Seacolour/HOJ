@@ -16,7 +16,7 @@ import com.hang.hojmodel.model.enums.QuestionSubmitLanguageEnum;
 import com.hang.hojmodel.model.enums.QuestionSubmitStatusEnum;
 import com.hang.hojmodel.model.vo.QuestionSubmitVO;
 import com.hang.hojquestionservice.mapper.QuestionSubmitMapper;
-import com.hang.hojquestionservice.rabbitmq.MyMessageProducer;
+import com.hang.hojquestionservice.message.MyMessageProducer;
 import com.hang.hojquestionservice.service.QuestionService;
 import com.hang.hojquestionservice.service.QuestionSubmitService;
 import com.hang.hojserviceclient.service.JudgeFeignClient;
