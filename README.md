@@ -28,3 +28,9 @@
  * Nacos 2.2.0
  * Seata 1.3.0
  * Sentinel Dashboard 1.7.0
+# 页面展示
+![微信截图_20240825174928](https://github.com/user-attachments/assets/14843504-ead7-4166-93f5-0900a23091df)
+![微信截图_20240825174947](https://github.com/user-attachments/assets/87ed5bfe-6a64-428d-ae92-a8a77de59a3d)
+![微信截图_20240825175028](https://github.com/user-attachments/assets/6fec609b-a348-495d-b656-ecfbc2080693)
+![微信截图_20240825175042](https://github.com/user-attachments/assets/69161c55-4b73-4d25-8ac2-eb3eb582c005)
+![微信截图_20240825175008](https://github.com/user-attachments/assets/8e6ecfdf-a201-45ff-8b0b-e01794492e8e)
